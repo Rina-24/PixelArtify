@@ -1,0 +1,24 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+</head>
+<body>
+    <h1>Image Upload</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <br>
+        Pixel Size: <input type="number" name="pixel_size" required>
+        <br>
+        File Format:
+        <input type="radio" name="file_format" value="jpg" checked> JPG
+        <input type="radio" name="file_format" value="png"> PNG
+        <br>
+        <input type="submit" value="Upload and Convert">
+    </form>
+</body>
+</html>
