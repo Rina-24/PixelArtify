@@ -77,7 +77,7 @@ def make_transparent(img, target_color):
     target_color_bgr = np.array(target_color[::-1])
 
     # 白色部分に対応するマスク画像を生成
-    mask = np.all(img[:, :, :3] == target_color_bgr, axis=-1)
+    mask = np.all(img[:, :, :3] == [255, 255, 255], axis=-1)
 
     # 元画像をBGR形式からBGRA形式に変換
     img_with_alpha = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
