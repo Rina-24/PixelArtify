@@ -3,39 +3,45 @@
 body {
     margin: 0;
     padding: 0;
-    background-size: 100vw 100vh;
-    background-image: url('/static/img/bg.PNG');
-    font-family: Arial, sans-serif;
-    background-repeat: no-repeat;
+    background-size: 100vw 100vh; /*背景画像のサイズをビューポート全体に設定*/
+    background-image: url('/static/img/bg.PNG'); /* bodyの背景画像を指定 */
+    font-family: Arial, sans-serif; /* ドキュメント全体のフォントファミリーを指定 */
+    background-repeat: no-repeat; /* 背景画像を繰り返し表示しないように設定 */
 }
 
 h1{
-    text-align: center;
-    color: rgb(244, 237, 241);
+    text-align: center; /* テキストを中央寄せにする */
+    color: rgb(244, 237, 241); /* RGB値を使用してテキストの色を指定 */
     font-size: 65px;
 }
 
 div{
-    background-image: url('/static/img/memo.PNG');
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: url('/static/img/memo.PNG'); /* divの背景画像を指定 */
+    background-repeat: no-repeat;  /* 背景画像を繰り返し表示しないように設定 */
+    background-position: center; /* 背景画像をdiv内で中央に配置 */
     background-size: contain; /* 背景画像を要素全体に広げる */
-    overflow: hidden;
-    height: 600px;
+    overflow: hidden; /* divからはみ出るコンテンツを非表示にする */
+    height: 600px; /* divの高さを指定 */
     
-    margin: auto;
-    margin-top: 7%;
+    margin: auto; /* divを水平方向に中央に配置 */
+    margin-top: 7%; /* 上部に7%のマージンを追加 */
 }   
 
 form{
-    text-align: center;
-    font-size: 30px;
-    color: rgb(186, 186, 234);
-    position: absolute;
-    top:51%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    line-height: 1.7;
+    text-align: center; /* フォーム内のテキストを中央寄せにする */
+    font-size: 30px; /* フォームテキストのフォントサイズを指定 */
+    color: rgb(186, 186, 234); /* RGB値を使用してテキストの色を指定 */
+    position: absolute; /* フォームを親要素を基準に絶対位置に配置 */
+    top:51%; /* 親要素の上端から51%の位置に配置 */
+    left: 50%; /* 親要素の左端から50%の位置に配置 */
+    transform: translate(-50%,-50%); /* translate変換を使用して、水平・垂直方向に中央に配置 */
+    line-height: 1.7; /* フォームテキストの行の高さを指定 */
     
 }
+
+/*transform: translate(-50%, -50%); は、CSSの transform プロパティを使用して要素を水平・垂直方向に移動させるもの。
+これによって、要素を親要素の中央に配置することができる。
+この関数は、要素を指定した水平（X軸）および垂直（Y軸）の距離だけ移動させる。
+-50% と指定されているので、要素は自身の幅や高さの半分だけ移動。
+これにより、要素が親要素の中央に配置される効果がある。*/
 
