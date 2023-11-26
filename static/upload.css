@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-size: cover;
+    background-size: 100vw 100vh;
     background-image: url('/static/img/bg.PNG');
     font-family: Arial, sans-serif;
     background-repeat: no-repeat;
