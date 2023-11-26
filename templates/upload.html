@@ -6,19 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Upload</title>
+    <link rel="stylesheet" href="/static/upload.css">
 </head>
 <body>
-    <h1>Image Upload</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*" required>
-        <br>
-        Pixel Size: <input type="number" name="pixel_size" required>
-        <br>
-        File Format:
-        <input type="radio" name="file_format" value="jpg" checked> JPG
-        <input type="radio" name="file_format" value="png"> PNG
-        <br>
-        <input type="submit" value="Upload and Convert">
-    </form>
+    <div>
+        <h1>―Pixel Artfy―</h1>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <br>
+                Pixel Size: <input type="number" name="pixel_size" required>
+                <br>
+                File Format:
+                <input type="radio" name="file_format" value="jpg" checked> JPG
+                <input type="radio" name="file_format" value="png"> PNG
+                <br><br>
+                <input type="image" src="/static/img/upload.PNG" alt="Submit" width="180" height="80">
+            </form>
+        
+    </div>
 </body>
 </html>

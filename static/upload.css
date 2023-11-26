@@ -1,0 +1,41 @@
+/* static/styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-image: url('/static/img/bg.PNG');
+    font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-align: center;
+    color: rgb(244, 237, 241);
+    font-size: 65px;
+}
+
+div{
+    background-image: url('/static/img/memo.PNG');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* 背景画像を要素全体に広げる */
+    overflow: hidden;
+    height: 600px;
+    
+    margin: auto;
+    margin-top: 7%;
+}   
+
+form{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(186, 186, 234);
+    position: absolute;
+    top:51%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    line-height: 1.7;
+    
+}
+
