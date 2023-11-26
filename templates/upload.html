@@ -14,7 +14,7 @@
             <form action="/upload" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" accept="image/*" required>
                 <br>
-                Pixel Size: <input type="number" name="pixel_size" required>
+                Pixel Size: <input type="number" name="pixel_size" required min="0">
                 <br>
                 File Format:
                 <input type="radio" name="file_format" value="jpg" checked> JPG
