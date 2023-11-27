@@ -19,6 +19,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def index():
     return render_template('upload.html')
 
+
 # @app.route('/upload', methods=['POST']) によって定義されており、HTTPメソッドがPOSTであるリクエストに対応
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -46,7 +47,7 @@ def upload():
         # 画像の読み込みと処理
         """ cv2.imread() は、指定されたファイルから画像を読み込み
             img は、OpenCVのNumPy配列として画像が格納"""
-        img = cv2.imread(filename)
+        img = cv2.imread(filename,cv2.IMREAD_UNCHANGED)
 
         """request.form['pixel_size'] は、アップロードされたフォームデータからピクセルサイズに関する値を取得。
             この値はフォームから送信されたもので、ユーザーが指定したピクセルサイズを表します。
@@ -63,9 +64,11 @@ def upload():
 
         elif request.form['file_format'] == 'png':
             # 透過処理も追加（未完成）
-            img_with_alpha = make_transparent(img, (255, 255, 255))
+            img_with_alpha = make_transparent(img)
             mosaic_img = mosaic(img_with_alpha, alpha)
             dc_img = decreaseColor(mosaic_img)
+            print(img_with_alpha)
+            
 
         # 処理結果の保存
         result_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'result_image.' + request.form['file_format'])
@@ -81,5 +84,8 @@ def upload():
     app.run(debug=True) は、Flaskアプリケーションをデバッグモードで実行するためのメソッド
     このコードの目的は、スクリプトが直接実行されるときに、Flaskアプリケーションを起動すること。
     通常、開発段階では debug=True を使用して簡単にデバッグできるようにし、本番環境では debug=False や app.run() を省略して運用が推奨"""
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
