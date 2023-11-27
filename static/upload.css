@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-size: 100vw 100vh; /*背景画像のサイズをビューポート全体に設定*/
-    background-image: url('/static/img/bg.PNG'); /* bodyの背景画像を指定 */
+    background-image: url('/static/img/bg2.PNG'); /* bodyの背景画像を指定 */
     font-family: Arial, sans-serif; /* ドキュメント全体のフォントファミリーを指定 */
     background-repeat: no-repeat; /* 背景画像を繰り返し表示しないように設定 */
 }
@@ -16,7 +16,7 @@ h1{
 }
 
 div{
-    background-image: url('/static/img/memo.PNG'); /* divの背景画像を指定 */
+    background-image: url('/static/img/memo2.PNG'); /* divの背景画像を指定 */
     background-repeat: no-repeat;  /* 背景画像を繰り返し表示しないように設定 */
     background-position: center; /* 背景画像をdiv内で中央に配置 */
     background-size: contain; /* 背景画像を要素全体に広げる */
