@@ -11,6 +11,8 @@ def make_transparent(img):
         img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 
     # 白い部分を検知してマスクを作成(whitesmoke[245,245,245])
+    # np.all()は与えられた要素がすべてtrueであるかどうかをみる
+    # :→その次元の全ての要素を選択することを示す。:3→ その次元の最初から3番目までの要素を取得
     white_mask = np.all(img[:, :, :3] >= [245, 245, 245], axis=-1)
     
     # 白い部分を無色透明にする
