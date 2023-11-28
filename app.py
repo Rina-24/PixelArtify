@@ -61,21 +61,20 @@ def upload():
             # モザイク処理と減色処理
             mosaic_img = mosaic(img, alpha)
             dc_img = decreaseColor(mosaic_img)
+            result_img = dc_img
 
         elif request.form['file_format'] == 'png':
-            # 透過処理も追加（未完成）
-            img_with_alpha = make_transparent(img)
-            mosaic_img = mosaic(img_with_alpha, alpha)
+            # 透過処理も追加
+            mosaic_img = mosaic(img, alpha)
             dc_img = decreaseColor(mosaic_img)
-            print(img_with_alpha)
-            
-
+            mtp_img = make_transparent(dc_img)
+            result_img = mtp_img
         # 処理結果の保存
         result_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'result_image.' + request.form['file_format'])
         
         """cv2.imwrite() は、指定されたファイルパスに画像を保存します。
             ここでは、処理された画像 dc_img を result_filename で指定されたファイルパスに保存"""
-        cv2.imwrite(result_filename, dc_img)
+        cv2.imwrite(result_filename, result_img)
 
         # 処理結果のファイルをクライアントに送信。send_from_directory 関数は、指定されたディレクトリから指定されたファイルを返すために使用
         return send_from_directory(app.config['UPLOAD_FOLDER'], 'result_image.' + request.form['file_format'])
